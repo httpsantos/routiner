@@ -153,7 +153,7 @@ mvn test
 ## Como Funciona
 
 O Routiner tem duas camadas, o serviço de CRUD de rotinas, e o gerenciador
-de rotinas por trás. Seu grande desafio é não utilizar um sistema de Scheduler
+de rotinas por trás. O grande desafio é não utilizar um sistema de Scheduler
 já existente na maioria das linguagens, mas ser um por si só.
 
 ### Serviço
