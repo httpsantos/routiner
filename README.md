@@ -163,8 +163,8 @@ já existente na maioria das linguagens, mas ser um por si só.
 e tratamentos específicos para exceções.
 
 **Considerações**
-* Tornar o Controller das rotinas mais agnóstico para receber ***qualquer tipo
-de comando*** seria uma evolução interessante
+* Tornar o Controller das rotinas mais agnóstico para receber e devolver ***qualquer tipo
+de comando*** dentro das rotinas seria uma evolução interessante
 
 ### RoutineManager
 
