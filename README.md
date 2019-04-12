@@ -42,13 +42,13 @@ Dentro da sua IDE, execute a classe **App.class** para iniciar o serviço
 O Routiner funciona como um serviço tipicamente CRUD contendo um gerenciador de rotinas por trás.
 As requisições possíveis são:
 
-**GET** https://localhost:7000/routines - Lista todas as rotinas criadas 
+**GET** http://localhost:7000/routines - Lista todas as rotinas criadas 
 
-**GET** https://localhost:7000/routines/:id - Detalha a rotina para o id correspondente
+**GET** http://localhost:7000/routines/:id - Detalha a rotina para o id correspondente
 
-**POST** https://localhost:7000/routines - Cria uma nova rotina 
+**POST** http://localhost:7000/routines - Cria uma nova rotina 
 
-**DELETE** https://localhost:7000/routines/:id - Deleta a rotina para o id correspondente 
+**DELETE** http://localhost:7000/routines/:id - Deleta a rotina para o id correspondente 
 
 ### Exemplos de requisições para testar
 
