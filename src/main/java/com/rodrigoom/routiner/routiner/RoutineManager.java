@@ -184,33 +184,6 @@ public class RoutineManager {
         routinesById.clear();
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-        Routine routine = Routine.builder()
-                .run(() -> {
-                    LocalDateTime date = LocalDateTime.now();
-                    System.out.println("Rotina1 - Executada em "+ date.format(formatter));
-                })
-                .withAnIntervalOf(3)
-                .asId(1)
-                .build();
-
-        Routine routine2 = Routine.builder()
-                .run(() -> {
-                    LocalDateTime date = LocalDateTime.now();
-                    System.out.println("Rotina2 - Executada em "+ date.format(formatter));
-                })
-                .withAnIntervalOf(2)
-                .asId(2)
-                .build();
-
-        RoutineManager.addRoutine(routine);
-        Thread.sleep(7000);
-        RoutineManager.addRoutine(routine2);
-        RoutineManager.delete(1);
-    }
-
     public static int generateNextId() {
         return idCounter+1;
     }

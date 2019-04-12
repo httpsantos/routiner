@@ -78,32 +78,4 @@ public class WriteToFileRunnable implements Runnable {
             logger.error("IO Error writing to file "+file+"", e);
         }
     }
-
-    public static void main(String[] args) throws InterruptedException {
-        Path currentDir = Paths.get(".");
-        System.out.println(currentDir.toAbsolutePath());
-
-        Routine routine = Routine.builder()
-                .run(new WriteToFileRunnable("Oi", "write_to_file_one", 1))
-                .withAnIntervalOf(1)
-                .asId(1)
-                .build();
-
-        Routine routine2 = Routine.builder()
-                .run(new WriteToFileRunnable("Eae", "write_to_file_one", 2))
-                .withAnIntervalOf(3)
-                .asId(2)
-                .build();
-
-        RoutineManager.addRoutine(routine);
-        Thread.sleep(2000);
-        RoutineManager.addRoutine(routine2);
-        Thread.sleep(10000);
-        System.exit(0);
-
-//        WriteToFileRunnable runnable = new WriteToFileRunnable("Oi", "write_to_file_two");
-//        runnable.run();
-//        runnable.run();
-//        runnable.run();
-    }
 }
