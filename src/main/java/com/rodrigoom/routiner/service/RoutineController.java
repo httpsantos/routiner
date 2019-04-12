@@ -26,6 +26,7 @@ public class RoutineController {
         RoutineManager.delete(id);
 
         ctx.status(200);
+        ctx.result("Routine "+id+" deleted successfully");
     }
 
     public static void getRoutine(Context ctx) throws IllegalArgumentException {
@@ -65,6 +66,8 @@ public class RoutineController {
                 .build();
 
         RoutineManager.addRoutine(routine);
+        ctx.status(200);
+        ctx.result("Routine "+id+" created successfully!");
     }
 
     private static boolean failOnInvalidCreationFields(Context ctx) {
