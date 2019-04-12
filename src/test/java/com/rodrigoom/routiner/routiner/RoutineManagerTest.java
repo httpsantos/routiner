@@ -61,7 +61,7 @@ public class RoutineManagerTest {
                 .build();
 
         RoutineManager.addRoutine(routine);
-        Thread.sleep(1000);
+        Thread.sleep(1200);
         RoutineManager.delete(routine.getId().get());
         Thread.sleep(1000);
 

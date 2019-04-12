@@ -88,6 +88,15 @@ public class RoutineManager {
             Long timeUntilNextOnQueue = findTimeUntilNextOnQueue();
 
             if (timeUntilNextOnQueue == null || timeUntilNextOnQueue > 0L) {
+                /* Some logics are sometimes a little "spaghetti" to understand, so let's go through it
+                When the semaphore is true, that means nothing new happened to the queue and the thread can wait
+                until the next execution. When the semaphore is false, it means something new happened to the queue,
+                and the thread should check it. Adds and deletes are the ones setting the semaphore to false when
+                needed, and they also use "notify" to wake up the thread if its currently waiting.
+
+                This flow only matters while the timeUntilNextOnQueue is greater than zero or there is none, because
+                if timeUntilNextOnQueue is lesser than zero, it means there is a routine that needs to be executed,
+                so it executes it and repeats the above flow.*/
                 synchronized (queueKeepWaitingSemaphore) {
                     if (queueKeepWaitingSemaphore.get()) {
                         try {
