@@ -6,7 +6,7 @@ Olá! Esté o Routiner, um serviço de gerenciamento de rotinas executáveis
 
 Você pode executar o Routiner de 2 formas:
 
-##### Docker Container
+### Docker Container
  
 Dê pull na imagem docker
 ```
@@ -25,7 +25,8 @@ do container. Sem ele, os arquivos seriam escritos apenas dentro do container e 
 seria possível acessá-los de fora, no seu gerenciador de arquivos por exemplo
 * **-e TZ='America/Sao_Paulo'**: Configurar o timezone do container para um fuso horário
 brasileiro, do contrário ele utiliza um fuso horário americano padrão da imagem de base 
-##### IDE
+
+### IDE
  
 Para esse passo, você precisará ter o Maven instalado em sua máquina
 
@@ -49,7 +50,7 @@ As requisições possíveis são:
 
 **DELETE** https://localhost:7000/routines/:id - Deleta a rotina para o id correspondente 
 
-##### Exemplos de requisições para testar
+### Exemplos de requisições para testar
 
 Criar rotinas
 ```
@@ -92,12 +93,12 @@ curl --request DELETE \
   --url http://localhost:7000/routines/1
 ```
 
-##### E as rotinas? Fazem o que?
+### E as rotinas? Fazem o que?
 
 As rotinas podem receber dois comandos:
 
-* write_to_file_one
-* write_to_file_two
+* *write_to_file_one*
+* *write_to_file_two*
 
 Esses comandos definem em qual arquivo a rotina 
 escreverá a mensagem cadastrada nela
@@ -155,7 +156,7 @@ O Routiner tem duas camadas, o serviço de CRUD de rotinas, e o gerenciador
 de rotinas por trás. Seu grande desafio é não utilizar um sistema de Scheduler
 já existente na maioria das linguagens, mas ser um por si só.
 
-#### Serviço
+### Serviço
 
 * Construído com o framework Javalin
 * Contém 4 endpoints de rotina, 1 healthcheck, 
@@ -165,7 +166,7 @@ e tratamentos específicos para exceções.
 * Tornar o Controller das rotinas mais agnóstico para receber ***qualquer tipo
 de comando*** seria uma evolução interessante
 
-#### RoutineManager
+### RoutineManager
 
 * Cada rotina criada é inserida em um ***mapa de Id->Rotina***, e enviada como parâmetro
 para o método que calcula a próxima execução a ser feita
